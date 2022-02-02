@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 
+
 class bigint
 {
 protected:
@@ -26,6 +27,7 @@ public:
 	bool operator >(const bigint&);
 	bool operator !=(bigint& num);
 	bool operator ==(bigint& num);
+	bigint operator +=(bigint& num);
 	void decTobin();
 	std::string getNumber();
 	void setNumber(std::string);

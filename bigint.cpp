@@ -244,13 +244,24 @@ bool bigint::operator ==(bigint& num) {
 	std::string num1 = this->number;
 	std::string num2 = num.number;;
 	if (num1 == num2) return true;
-	else false;
+	else return false;
 }
 bool bigint::operator !=(bigint& num) {
 	std::string num1 = this->number;
 	std::string num2 = num.number;
 	if (num1 == num2) return false;
-	else true;
+	else return true;
+}
+
+
+bigint bigint::operator +=(bigint& num) {
+	bigint obj("0");
+	obj.number = this->number;
+	obj.len = this->len;
+	obj = obj + num;
+	this->number = obj.number;
+	this->len = obj.len;
+	return obj;
 }
 
 bigint bigint::operator /(const bigint &num) {
